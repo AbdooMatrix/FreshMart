@@ -1,0 +1,92 @@
+Folder PATH listing for volume Local Disk
+Volume serial number is 5E49-2EC4
+D:.
+|   .gitignore
+|   FreshMart_Phase3_Plan_Final.docx
+|   README.md
+|   structure.txt
+|   
++---backend
+|   |   database.py
+|   |   main.py
+|   |   requirements.txt
+|   |   
+|   +---crud
+|   |       cart_crud.py
+|   |       order_crud.py
+|   |       product_crud.py
+|   |       __init__.py
+|   |       
+|   +---models
+|   |       cart.py
+|   |       order.py
+|   |       order_item.py
+|   |       payment.py
+|   |       product.py
+|   |       user.py
+|   |       __init__.py
+|   |       
+|   +---routes
+|   |       cart.py
+|   |       orders.py
+|   |       products.py
+|   |       __init__.py
+|   |       
+|   \---schemas
+|           cart_schema.py
+|           order_schema.py
+|           product_schema.py
+|           user_schema.py
+|           __init__.py
+|           
++---docs
+|       api_endpoints.md
+|       db_schema.png
+|       postman_collection.json
+|       
+\---frontend
+    |   pubspec.lock
+    |   pubspec.yaml
+    |   
+    \---lib
+        |   main.dart
+        |   
+        +---config
+        |       api_config.dart
+        |       
+        +---models
+        |       cart_item.dart
+        |       order.dart
+        |       product.dart
+        |       user.dart
+        |       
+        +---screens
+        |   +---admin
+        |   |       add_product_screen.dart
+        |   |       admin_dashboard_screen.dart
+        |   |       admin_product_list_screen.dart
+        |   |       delete_confirmation_dialog.dart
+        |   |       edit_product_screen.dart
+        |   |       
+        |   \---customer
+        |           cart_screen.dart
+        |           checkout_screen.dart
+        |           home_screen.dart
+        |           login_screen.dart
+        |           order_confirmation_screen.dart
+        |           order_tracking_screen.dart
+        |           product_detail_screen.dart
+        |           profile_screen.dart
+        |           register_screen.dart
+        |           
+        +---services
+        |       api_service.dart
+        |       cart_service.dart
+        |       order_service.dart
+        |       product_service.dart
+        |       
+        \---widgets
+                cart_item_tile.dart
+                custom_button.dart
+                product_card.dart
+                
