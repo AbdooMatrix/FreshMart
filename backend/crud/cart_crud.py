@@ -7,7 +7,7 @@ from schemas.cart_schema import CartAdd, CartUpdate
 def get_cart_items(db: Session, user_id: int):
     """
     Get all cart items for a user.
-    Joins with Products table to get name and price.
+    Joins with Products table to get name, price, and image.
     Calculates subtotal for each item.
     """
     cart_items = db.query(Cart).filter(Cart.user_id == user_id).all()
@@ -22,6 +22,7 @@ def get_cart_items(db: Session, user_id: int):
                 "quantity": item.quantity,
                 "product_name": product.name,
                 "product_price": product.price,
+                "product_image": product.image_url,   
                 "subtotal": round(product.price * item.quantity, 2),
             })
     return result

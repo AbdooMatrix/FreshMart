@@ -40,7 +40,6 @@ def seed_data():
 
     db = SessionLocal()
 
-    # Only add sample data if the database is empty
     if db.query(Product).count() == 0:
         sample_products = [
             Product(
@@ -49,7 +48,7 @@ def seed_data():
                 price=3.99,
                 stock=50,
                 category="Fruits",
-                image_url="https://i.imgur.com/1tMFzp8.png"
+                image_url="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg"
             ),
             Product(
                 name="Whole Milk",
@@ -57,7 +56,7 @@ def seed_data():
                 price=1.49,
                 stock=100,
                 category="Dairy",
-                image_url="https://i.imgur.com/KeHbTJ0.png"
+                image_url="https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg"
             ),
             Product(
                 name="Sourdough Bread",
@@ -65,7 +64,7 @@ def seed_data():
                 price=4.50,
                 stock=30,
                 category="Bakery",
-                image_url="https://i.imgur.com/W3Y8NzC.png"
+                image_url="https://images.pexels.com/photos/1586947/pexels-photo-1586947.jpeg"
             ),
             Product(
                 name="Chicken Breast",
@@ -73,7 +72,7 @@ def seed_data():
                 price=6.99,
                 stock=40,
                 category="Meat",
-                image_url="https://i.imgur.com/RfMJqDk.png"
+                image_url="https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg"
             ),
             Product(
                 name="Organic Eggs",
@@ -81,7 +80,7 @@ def seed_data():
                 price=5.29,
                 stock=60,
                 category="Dairy",
-                image_url="https://i.imgur.com/YBmMzBq.png"
+                image_url="https://images.pexels.com/photos/162712/egg-white-food-protein-162712.jpeg"
             ),
             Product(
                 name="Basmati Rice",
@@ -89,7 +88,7 @@ def seed_data():
                 price=7.99,
                 stock=45,
                 category="Grains",
-                image_url="https://i.imgur.com/Q3GmXOL.png"
+                image_url="https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg"
             ),
         ]
         db.add_all(sample_products)
