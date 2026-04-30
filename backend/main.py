@@ -96,26 +96,26 @@ def seed_data():
         print("✅ Sample products added")
 
     if db.query(User).count() == 0:
-        sample_users = [
-            User(
-                name="Test Customer",
-                email="customer@test.com",
-                password="123456",
-                role="customer",
-                phone="01012345678",
-                address="123 Main St, Cairo"
-            ),
-            User(
-                name="Admin User",
-                email="admin@test.com",
-                password="admin123",
-                role="admin",
-                phone="01098765432",
-                address="FreshMart HQ"
-            ),
-        ]
-        db.add_all(sample_users)
-        db.commit()
-        print("✅ Sample users added")
+     sample_users = [
+        User(
+            name="Test Customer",
+            email="customer@test.com",
+            password="123456",
+            role="customer",
+            phone="01012345678",
+            address="123 Main St, Cairo"
+        ),
+        User(
+            name="Vendor User",
+            email="vendor@test.com",
+            password="vendor123",
+            role="vendor",
+            phone="01098765432",
+            address="FreshMart Store"
+        ),
+    ]
+    db.add_all(sample_users)
+    db.commit()
+    print("✅ Sample users added")
 
     db.close()
