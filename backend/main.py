@@ -174,7 +174,7 @@ def seed_data():
                 price=3.99,
                 stock=40,
                 category="Grocery",
-                image_url="https://images.pexels.com/photos/3023476/pexels-photo-3023476.jpeg",
+                image_url="https://images.pexels.com/photos/34556542/pexels-photo-34556542.jpeg",
                 vendor_id=2,  # FreshMart Central Vendor
             ),
         ]
