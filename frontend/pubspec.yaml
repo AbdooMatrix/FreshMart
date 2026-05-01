@@ -11,12 +11,14 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.6
   http: ^1.2.0                    # API calls to FastAPI
-  google_fonts: ^6.2.1            # Epilogue + Work Sans
+  google_fonts: ^8.1.0            # Epilogue + Work Sans
   cached_network_image: ^3.3.1    # Smart image loading + fallback
-  intl: ^0.19.0                   # Currency formatting
+  intl: ^0.20.2                   # Currency formatting
 
 dev_dependencies:
-  flutter_lints: ^3.0.1
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true

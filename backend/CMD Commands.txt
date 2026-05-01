@@ -1,0 +1,12 @@
+-- setup -- 
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+
+-- run -- 
+cd backend
+venv\Scripts\activate
+del freshmart.db
+uvicorn main:app --reload

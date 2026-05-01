@@ -9,6 +9,6 @@ class User(Base):
     name = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
     password = Column(String, nullable=False)
-    role = Column(String, default="customer")  # "customer" or "admin"
+    role = Column(String, default="customer")  # "customer" or "vendor" or "Admin" or "Delivery"
     phone = Column(String, nullable=True)
     address = Column(String, nullable=True)

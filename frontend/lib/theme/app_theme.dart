@@ -20,6 +20,10 @@ class AppColors {
   static const secondaryFixed = Color(0xFFD9E6DA);
   static const onSecondaryFixed = Color(0xFF131E17);
   static const onPrimaryContainer = Color(0xFFCBFFC2);
+  static const secondary    = Color(0xFF556158);
+  static const onSecondary  = Color(0xFFFFFFFF);
+  static const tertiary     = Color(0xFF923357);
+  static const onTertiary   = Color(0xFFFFFFFF);
 }
 
 class AppSpacing {

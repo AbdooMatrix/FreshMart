@@ -2,7 +2,6 @@ from pydantic import BaseModel
 from typing import Optional
 
 
-# Used when CREATING a new product (Admin)
 class ProductCreate(BaseModel):
     name: str
     description: Optional[str] = None
@@ -10,9 +9,9 @@ class ProductCreate(BaseModel):
     stock: int = 0
     category: Optional[str] = None
     image_url: Optional[str] = None
+    vendor_id: Optional[int] = None       
 
 
-# Used when UPDATING a product — all fields optional
 class ProductUpdate(BaseModel):
     name: Optional[str] = None
     description: Optional[str] = None
@@ -20,9 +19,9 @@ class ProductUpdate(BaseModel):
     stock: Optional[int] = None
     category: Optional[str] = None
     image_url: Optional[str] = None
+    vendor_id: Optional[int] = None        # (optional, in case you want to reassign)
 
 
-# Used when RETURNING product data to Flutter
 class ProductResponse(BaseModel):
     id: int
     name: str
@@ -31,6 +30,8 @@ class ProductResponse(BaseModel):
     stock: int
     category: Optional[str] = None
     image_url: Optional[str] = None
+    vendor_id: Optional[int] = None
+    vendor_name: Optional[str] = None      # (joined from User table)
 
     class Config:
         from_attributes = True
