@@ -47,6 +47,36 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  // ───── NEW: Logout confirmation ─────
+  Future<void> _confirmLogout() async {
+    final shouldLogout = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Logout'),
+        content: const Text('Are you sure you want to logout?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            style: TextButton.styleFrom(foregroundColor: AppColors.error),
+            child: const Text('Logout'),
+          ),
+        ],
+      ),
+    );
+
+    if (shouldLogout == true && mounted) {
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        '/login',
+            (route) => false,
+      );
+    }
+  }
+
   List<Product> _filter(List<Product> all) {
     return all.where((p) {
       final matchesCat = _selectedCategory == 'All' ||
@@ -67,10 +97,20 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: const Icon(Icons.menu, color: Colors.white),
           onPressed: () {},
         ),
-        trailing: IconButton(
-          icon: const Icon(Icons.shopping_cart, color: Colors.white),
-          onPressed: () => Navigator.pushNamed(context, '/cart')
-              .then((_) => _refresh()),
+        // ───── UPDATED: Cart + Logout ─────
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.shopping_cart, color: Colors.white),
+              onPressed: () => Navigator.pushNamed(context, '/cart')
+                  .then((_) => _refresh()),
+            ),
+            IconButton(
+              icon: const Icon(Icons.power_settings_new, color: Colors.white),
+              onPressed: _confirmLogout,
+            ),
+          ],
         ),
       ),
       body: RefreshIndicator(
@@ -182,7 +222,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemBuilder: (_, i) => ProductCard(
                         product: products[i],
                         onTap: () => Navigator.pushNamed(
-                          context, '/product',
+                          context,
+                          '/product',
                           arguments: products[i].id,
                         ).then((_) => _refresh()),
                         onAddToCart: () => _addToCart(products[i]),
